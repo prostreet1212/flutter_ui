@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:food_delivery_app_ui/widgets/app_bar_widget.dart';
 
 import '../widgets/categories_widget.dart';
+import '../widgets/newest_items_widget.dart';
 import '../widgets/popular_item_widget.dart';
 
 class HomePage extends StatelessWidget {
@@ -60,19 +61,33 @@ class HomePage extends StatelessWidget {
           ),
           //Category
           Padding(
-              padding: EdgeInsets.only(top: 10,left: 10),
-          child: Text('Категории',style: TextStyle(fontWeight: FontWeight.bold,
-          fontSize: 20),),
+            padding: EdgeInsets.only(top: 10, left: 10),
+            child: Text(
+              'Категории',
+              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
+            ),
           ),
           //Category widget
           CategoriesWidget(),
           Padding(
-            padding: EdgeInsets.only(top: 10,left: 10),
-            child: Text('Популярное',style: TextStyle(fontWeight: FontWeight.bold,
-                fontSize: 20),),
+            padding: EdgeInsets.only(top: 20, left: 10),
+            child: Text(
+              'Популярное',
+              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
+            ),
           ),
           //Popular Items Widget
           PopularItemWidget(),
+          //Newest items
+          Padding(
+            padding: EdgeInsets.only(top: 20, left: 10),
+            child: Text(
+              'Новинки',
+              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
+            ),
+          ),
+          //Newewst widget
+          NewestItemsWidget(),
         ],
       ),
     );
