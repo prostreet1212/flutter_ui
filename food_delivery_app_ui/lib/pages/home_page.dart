@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:food_delivery_app_ui/widgets/app_bar_widget.dart';
 
 import '../widgets/categories_widget.dart';
+import '../widgets/drawer_widget.dart';
 import '../widgets/newest_items_widget.dart';
 import '../widgets/popular_item_widget.dart';
 
@@ -89,6 +90,27 @@ class HomePage extends StatelessWidget {
           //Newewst widget
           NewestItemsWidget(),
         ],
+      ),
+      drawer: DrawerWidget(),
+      floatingActionButton: Container(
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(20),
+          boxShadow: [
+            BoxShadow(
+              color: Colors.grey.withValues(alpha: 0.5),
+              spreadRadius: 2,
+              blurRadius: 10,
+              offset: Offset(0, 3),
+            ),
+          ],
+        ),
+        child: FloatingActionButton(
+          child: Icon(CupertinoIcons.cart, size: 28, color: Colors.red),
+          backgroundColor: Colors.white,
+          onPressed: () {
+            Navigator.of(context).pushNamed('cartPage');
+          },
+        ),
       ),
     );
   }
