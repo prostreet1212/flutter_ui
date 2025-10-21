@@ -1,7 +1,10 @@
 import 'package:clippy_flutter/arc.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:food_delivery_app_ui/widgets/app_bar_widget.dart';
+
+import '../widgets/item_bottom_nav_bar.dart';
 
 class ItemPage extends StatelessWidget {
   const ItemPage({super.key});
@@ -63,6 +66,7 @@ class ItemPage extends StatelessWidget {
                       Padding(
                         padding: EdgeInsets.only(top: 10, bottom: 20),
                         child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             Text(
                               'Пицца',
@@ -72,14 +76,75 @@ class ItemPage extends StatelessWidget {
                               ),
                             ),
                             Container(
-                                width: 90,
-                                padding: EdgeInsets.all(5),
-                            decoration: BoxDecoration(
-                              color: Colors.red,
-                              borderRadius: BorderRadius.circular(10),
-                              //continue
+                              width: 90,
+                              padding: EdgeInsets.all(5),
+                              decoration: BoxDecoration(
+                                color: Colors.red,
+                                borderRadius: BorderRadius.circular(10),
+                              ),
+                              child: Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                children: [
+                                  Icon(
+                                    CupertinoIcons.minus,
+                                    color: Colors.white,
+                                    size: 20,
+                                  ),
+                                  Text(
+                                    '1',
+                                    style: TextStyle(
+                                      fontSize: 16,
+                                      color: Colors.white,
+                                      fontWeight: FontWeight.bold,
+                                    ),
+                                  ),
+                                  Icon(
+                                    CupertinoIcons.plus,
+                                    color: Colors.white,
+                                    size: 20,
+                                  ),
+                                ],
+                              ),
                             ),
+                          ],
+                        ),
+                      ),
+                      Padding(
+                        padding: EdgeInsets.symmetric(vertical: 10),
+                        child: Text(
+                          'Пеперони — это острая салями итало-американского происхождения, которую делают из вяленого мяса (часто свинины, говядины или птицы) и приправляют паприкой или чили.',
+                          style: TextStyle(fontSize: 16),
+                          textAlign: TextAlign.justify,
+                        ),
+                      ),
+                      Padding(
+                        padding: EdgeInsets.symmetric(vertical: 15),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Text(
+                              'Время доставки:',
+                              style: TextStyle(
+                                fontSize: 16,
+                                fontWeight: FontWeight.bold,
+                                fontStyle: FontStyle.italic,
+                              ),
                             ),
+                            Row(
+                              children: [
+                                Padding(
+                                  padding: EdgeInsets.symmetric(horizontal: 5),
+                                child:Icon(CupertinoIcons.clock,color: Colors.red,),),
+                                Text(
+                                  '30 мин.',
+                                  style: TextStyle(
+                                    fontSize: 16,
+                                  ),
+                                ),
+                              ],
+                            ),
+
                           ],
                         ),
                       ),
@@ -91,6 +156,7 @@ class ItemPage extends StatelessWidget {
           ],
         ),
       ),
+      bottomNavigationBar: ItemBottomNavBar(),
     );
   }
 }
