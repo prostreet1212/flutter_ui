@@ -23,7 +23,6 @@ class _StartPageState extends State<StartPage> {
         children: [
           Container(
             height: SizeConfig.screenHeight! / 2.732,
-
             /// 250.0
             decoration: BoxDecoration(
               image: DecorationImage(
@@ -37,7 +36,6 @@ class _StartPageState extends State<StartPage> {
             children: [
               Container(
                 width: SizeConfig.screenWidth! / 1.83,
-
                 /// 225.0
                 height: SizeConfig.screenHeight! / 5.174,
 
@@ -77,11 +75,12 @@ class _StartPageState extends State<StartPage> {
                         ),
                       ),
                     ),
-                    LoginButton(),
-                    RegisterButtonWidget(),
+
                   ],
                 ),
               ),
+              LoginButton(),
+              RegisterButtonWidget(),
             ],
           ),
         ],

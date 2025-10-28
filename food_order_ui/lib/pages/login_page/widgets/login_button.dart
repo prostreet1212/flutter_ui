@@ -1,38 +1,41 @@
 import 'package:flutter/material.dart';
+import '../../../config/colors.dart';
+import '../../../config/size_config.dart';
 
-
-import '../../config/colors.dart';
-import '../../config/size_config.dart';
-import '../login_page/login_page.dart';
-
-class LoginButton extends StatefulWidget {
-  const LoginButton({Key? key}) : super(key: key);
+class LoginButonColor extends StatefulWidget {
+  const LoginButonColor({Key? key}) : super(key: key);
 
   @override
-  _LoginButtonState createState() => _LoginButtonState();
+  _LoginButonColorState createState() => _LoginButonColorState();
 }
 
-class _LoginButtonState extends State<LoginButton> {
+class _LoginButonColorState extends State<LoginButonColor> {
   @override
   Widget build(BuildContext context) {
     SizeConfig().init(context);
     return Padding(
       padding: EdgeInsets.fromLTRB(
           SizeConfig.screenWidth!/20.55,
-          0,
+          SizeConfig.screenHeight!/7.59,
           SizeConfig.screenWidth!/20.55,
-          SizeConfig.screenHeight!/45.54),
+          SizeConfig.screenHeight!/45.54
+      ),
       child: Container(
         decoration: BoxDecoration(
-          //boxShadow: [BoxShadow(color: Colors.black26, offset: Offset(0, 4), blurRadius: 5.0)],
-          color: lightColor,
+          boxShadow: [BoxShadow(color: Colors.black26, offset: Offset(0, 4), blurRadius: 5.0)],
+          gradient: LinearGradient(
+            begin: Alignment.centerLeft,
+            end: Alignment.centerRight,
+            stops: [0.0, 1.0],
+            colors: [buttonColor, lightColor,],
+          ),
           borderRadius: BorderRadius.circular(30),
         ),
         child: ElevatedButton(
           style: ButtonStyle(
             shape: MaterialStateProperty.all<RoundedRectangleBorder>(
               RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(0.0),
+                borderRadius: BorderRadius.circular(20.0),
               ),
             ),
             minimumSize: MaterialStateProperty.all(Size(SizeConfig.screenWidth!/1.37, SizeConfig.screenHeight!/13.66)),
@@ -40,11 +43,11 @@ class _LoginButtonState extends State<LoginButton> {
             shadowColor: MaterialStateProperty.all(Colors.transparent),
           ),
           onPressed: () {
-            Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => LoginPage()));
+            //Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => MyHomePage()));
           },
           child: Text(
             "LOGIN",
-            style: TextStyle(fontSize: 16,  fontWeight: FontWeight.w700, color: Colors.white,),
+            style: TextStyle(fontSize: SizeConfig.screenHeight!/42.68,  fontWeight: FontWeight.w700, color: Colors.white,),    /// 16
           ),
         ),
       ),
