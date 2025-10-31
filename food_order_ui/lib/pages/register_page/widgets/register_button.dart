@@ -1,29 +1,36 @@
 import 'package:flutter/material.dart';
-import '../../config/colors.dart';
-import '../../config/size_config.dart';
-import '../register_page/register_page_view.dart';
 
-class RegisterButtonWidget extends StatefulWidget {
-  const RegisterButtonWidget({Key? key}) : super(key: key);
+import '../../../config/colors.dart';
+import '../../../config/size_config.dart';
+import '../../login_page/login_page.dart';
+
+class RegisterButton extends StatefulWidget {
+  const RegisterButton({Key? key}) : super(key: key);
 
   @override
-  _RegisterButtonWidgetState createState() => _RegisterButtonWidgetState();
+  _RegisterButtonState createState() => _RegisterButtonState();
 }
 
-class _RegisterButtonWidgetState extends State<RegisterButtonWidget> {
+class _RegisterButtonState extends State<RegisterButton> {
   @override
   Widget build(BuildContext context) {
     SizeConfig().init(context);
     return Padding(
       padding: EdgeInsets.fromLTRB(
           SizeConfig.screenWidth!/20.55,
-          0,
+          SizeConfig.screenHeight!/17.075,
           SizeConfig.screenWidth!/20.55,
-          SizeConfig.screenHeight!/34.15
+          SizeConfig.screenHeight!/45.54
       ),
       child: Container(
         decoration: BoxDecoration(
-          color: registerColor,
+          boxShadow: [BoxShadow(color: Colors.black26, offset: Offset(0, 4), blurRadius: 5.0)],
+          gradient: LinearGradient(
+            begin: Alignment.centerLeft,
+            end: Alignment.centerRight,
+            stops: [0.0, 1.0],
+            colors: [buttonColor, lightColor,],
+          ),
           borderRadius: BorderRadius.circular(30),
         ),
         child: ElevatedButton(
@@ -38,11 +45,11 @@ class _RegisterButtonWidgetState extends State<RegisterButtonWidget> {
             shadowColor: MaterialStateProperty.all(Colors.transparent),
           ),
           onPressed: () {
-            Navigator.push(context, MaterialPageRoute(builder: (context) => RegisterPageView()));
+            Navigator.push(context, MaterialPageRoute(builder: (context) => LoginPage()));
           },
           child: Text(
             "SIGNUP",
-            style: TextStyle(color: buttonColor, fontSize: SizeConfig.screenHeight!/42.69,  fontWeight: FontWeight.w700),   /// 16
+            style: TextStyle(fontSize: SizeConfig.screenHeight!/42.68,  fontWeight: FontWeight.w700, color: Colors.white,),   /// 16
           ),
         ),
       ),

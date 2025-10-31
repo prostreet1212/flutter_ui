@@ -1,36 +1,33 @@
 import 'package:flutter/material.dart';
-
 import '../../../config/colors.dart';
 import '../../../config/size_config.dart';
-import '../../register_page/register_page_view.dart';
+import '../../login_page/login_page.dart';
 
-
-class TextSignUp extends StatelessWidget {
+class TextSignIn extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     SizeConfig().init(context);
     return Padding(
       padding: EdgeInsets.fromLTRB(
           SizeConfig.screenWidth!/20.55,
-          SizeConfig.screenHeight!/136.6,
+          0,
           SizeConfig.screenWidth!/20.55,
-          0
-      ),
+          0),
       child: Container(
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Text("Don't have an account?", style: TextStyle(color: texthint),),
+            Text("Already have an account? ", style: TextStyle(color: texthint),),
             GestureDetector(
               onTap: (){
-                Navigator.push(context, MaterialPageRoute(builder: (context) => RegisterPageView()));
+                Navigator.push(context, MaterialPageRoute(builder: (context) => LoginPage()));
               },
               child: Text(
-                " Sign up",
+                "Sign in",
                 style: TextStyle(
                     color: buttonColor,
                     fontWeight: FontWeight.w600,
-                    fontSize: SizeConfig.screenHeight!/45.54          /// 15
+                    fontSize: SizeConfig.screenHeight!/45.54           /// 15.0
                 ),
               ),
             )

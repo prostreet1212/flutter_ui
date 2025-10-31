@@ -5,6 +5,7 @@ import 'package:food_order_ui/pages/login_page/widgets/forgot_password.dart';
 import 'package:food_order_ui/pages/login_page/widgets/login_button.dart';
 import 'package:food_order_ui/pages/login_page/widgets/logo.dart';
 import 'package:food_order_ui/pages/login_page/widgets/text_field.dart';
+import 'package:food_order_ui/pages/login_page/widgets/text_signup.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
@@ -26,7 +27,7 @@ class _LoginPageState extends State<LoginPage> {
                 LoginTextField(),
                 ForgotPassword(),
                 LoginButonColor(),
-                /*TextSignUp(),*/
+                TextSignUp(),
               ],
             ),
           ),

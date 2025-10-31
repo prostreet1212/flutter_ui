@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../../../bottom_navigator.dart';
 import '../../../config/colors.dart';
 import '../../../config/size_config.dart';
 
@@ -43,7 +44,7 @@ class _LoginButonColorState extends State<LoginButonColor> {
             shadowColor: MaterialStateProperty.all(Colors.transparent),
           ),
           onPressed: () {
-            //Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => MyHomePage()));
+            Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => MyHomePage()));
           },
           child: Text(
             "LOGIN",

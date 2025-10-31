@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:food_order_ui/pages/start_page/StartPage.dart';
+import 'package:food_order_ui/splash_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -17,7 +18,8 @@ class MyApp extends StatelessWidget {
         //colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         primarySwatch: Colors.orange,
       ),
-      home:StartPage(),
+      //home:StartPage(),
+      home:SplashScreen(),
     );
   }
 }
