@@ -60,7 +60,7 @@ class _IncreaseDecreaseState extends State<IncreaseDecrease> {
               ),
               Container(
                 child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
+                  mainAxisAlignment: MainAxisAlignment.start,
                   children: [
                     InkWell(
                       onTap: (){_decreaseCart();},

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../../config/size_config.dart';
+import '../../search_page/search_page_view.dart';
 
 class SearchFood extends StatefulWidget {
   const SearchFood({Key? key}) : super(key: key);
@@ -22,7 +23,7 @@ class _SearchFoodState extends State<SearchFood> {
         ),
         child: InkWell(
           onTap: (){
-            //Navigator.push(context, MaterialPageRoute(builder: (context) => SearchPageView()));
+            Navigator.push(context, MaterialPageRoute(builder: (context) => SearchPageView()));
             print("hello");
           },
           child: Container(
