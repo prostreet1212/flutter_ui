@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
 
-import '../../config/size_config.dart';
+import '../../../config/size_config.dart';
+
 
 class LottieWidget extends StatelessWidget {
   const LottieWidget({Key? key}) : super(key: key);

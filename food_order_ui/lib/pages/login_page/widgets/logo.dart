@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import '../../../config/size_config.dart';
-import '../../widgets/text_tile.dart';
+import '../../start_page/widgets/text_tile.dart';
 
 class LogoImage extends StatelessWidget {
   const LogoImage({Key? key}) : super(key: key);

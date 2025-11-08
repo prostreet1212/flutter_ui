@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../../config/size_config.dart';
+import '../../../config/size_config.dart';
 
 class RouterText extends StatelessWidget {
   const RouterText({Key? key}) : super(key: key);

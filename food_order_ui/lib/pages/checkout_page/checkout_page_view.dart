@@ -4,6 +4,7 @@ import 'package:food_order_ui/pages/checkout_page/widgets/payment.dart';
 import '../../config/colors.dart';
 import '../../config/size_config.dart';
 import '../../success_page/success_page_view.dart';
+import '../success_page/success_page_view.dart';
 
 class CheckoutPageView extends StatefulWidget {
   const CheckoutPageView({Key? key}) : super(key: key);

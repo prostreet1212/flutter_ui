@@ -1,6 +1,7 @@
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:food_order_ui/pages/cart_page/cart_view.dart';
+import 'package:food_order_ui/pages/favorite_page/favorite_page_view.dart';
 import 'package:food_order_ui/pages/home_page/home_page_view.dart';
 import 'package:food_order_ui/pages/search_page/search_page_view.dart';
 import 'config/colors.dart';
@@ -21,8 +22,8 @@ class _MyHomePageState extends State<MyHomePage> {
     HomePageView(),
     SearchPageView(),
     CartView(),
-    /*FavoritePageView(),
-    ProfilePageView(),*/
+    FavoritePageView(),
+    /*ProfilePageView(),*/
   ];
   @override
   Widget build(BuildContext context) {

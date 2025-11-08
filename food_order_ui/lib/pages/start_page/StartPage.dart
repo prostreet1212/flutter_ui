@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:food_order_ui/pages/widgets/login_button_widget.dart';
+import 'package:food_order_ui/pages/start_page/widgets/login_button_widget.dart';
+import 'package:food_order_ui/pages/start_page/widgets/register_button_widget.dart';
 
 import '../../config/size_config.dart';
-import '../widgets/register_button_widget.dart';
-import '../widgets/text_tile.dart';
+import '../login_page/widgets/text_title.dart';
+
 
 class StartPage extends StatefulWidget {
   const StartPage({super.key});

@@ -18,8 +18,8 @@ class MyApp extends StatelessWidget {
         //colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         primarySwatch: Colors.orange,
       ),
-      //home:StartPage(),
-      home:SplashScreen(),
+      home:StartPage(),
+      //home:SplashScreen(),
     );
   }
 }

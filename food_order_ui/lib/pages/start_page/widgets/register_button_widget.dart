@@ -1,18 +1,18 @@
 import 'package:flutter/material.dart';
 
+import '../../../config/colors.dart';
+import '../../../config/size_config.dart';
+import '../../register_page/register_page_view.dart';
 
-import '../../config/colors.dart';
-import '../../config/size_config.dart';
-import '../login_page/login_page.dart';
 
-class LoginButton extends StatefulWidget {
-  const LoginButton({Key? key}) : super(key: key);
+class RegisterButtonWidget extends StatefulWidget {
+  const RegisterButtonWidget({Key? key}) : super(key: key);
 
   @override
-  _LoginButtonState createState() => _LoginButtonState();
+  _RegisterButtonWidgetState createState() => _RegisterButtonWidgetState();
 }
 
-class _LoginButtonState extends State<LoginButton> {
+class _RegisterButtonWidgetState extends State<RegisterButtonWidget> {
   @override
   Widget build(BuildContext context) {
     SizeConfig().init(context);
@@ -21,18 +21,18 @@ class _LoginButtonState extends State<LoginButton> {
           SizeConfig.screenWidth!/20.55,
           0,
           SizeConfig.screenWidth!/20.55,
-          SizeConfig.screenHeight!/45.54),
+          SizeConfig.screenHeight!/34.15
+      ),
       child: Container(
         decoration: BoxDecoration(
-          //boxShadow: [BoxShadow(color: Colors.black26, offset: Offset(0, 4), blurRadius: 5.0)],
-          color: lightColor,
+          color: registerColor,
           borderRadius: BorderRadius.circular(30),
         ),
         child: ElevatedButton(
           style: ButtonStyle(
             shape: MaterialStateProperty.all<RoundedRectangleBorder>(
               RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(0.0),
+                borderRadius: BorderRadius.circular(20.0),
               ),
             ),
             minimumSize: MaterialStateProperty.all(Size(SizeConfig.screenWidth!/1.37, SizeConfig.screenHeight!/13.66)),
@@ -40,11 +40,11 @@ class _LoginButtonState extends State<LoginButton> {
             shadowColor: MaterialStateProperty.all(Colors.transparent),
           ),
           onPressed: () {
-            Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => LoginPage()));
+            Navigator.push(context, MaterialPageRoute(builder: (context) => RegisterPageView()));
           },
           child: Text(
-            "LOGIN",
-            style: TextStyle(fontSize: 16,  fontWeight: FontWeight.w700, color: Colors.white,),
+            "SIGNUP",
+            style: TextStyle(color: buttonColor, fontSize: SizeConfig.screenHeight!/42.69,  fontWeight: FontWeight.w700),   /// 16
           ),
         ),
       ),

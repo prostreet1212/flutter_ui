@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import '../../bottom_navigator.dart';
-import '../../config/colors.dart';
-import '../../config/size_config.dart';
+import '../../../bottom_navigator.dart';
+import '../../../config/colors.dart';
+import '../../../config/size_config.dart';
+
 
 class OkButton extends StatefulWidget {
   const OkButton({Key? key}) : super(key: key);
