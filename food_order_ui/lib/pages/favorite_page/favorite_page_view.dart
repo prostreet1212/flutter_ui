@@ -34,7 +34,7 @@ class _FavoritePageViewState extends State<FavoritePageView> {
               if(snapshot.hasData){
                 var foodList = snapshot.data;
                 return GridView.builder(
-                    itemCount: 3,
+                    itemCount: foodList!.length,
                     gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                       crossAxisCount: 2,
                       crossAxisSpacing: 8,
@@ -64,6 +64,7 @@ class _FavoritePageViewState extends State<FavoritePageView> {
                                   FavoriteDetail(food_image_name: food.foodImageName, food_name: food.foodName, food_category: food.foodCategory, food_price: food.foodPrice),
                                   FavoriteCartIcon(),
                                   FavoriteIcon(),
+
                                 ],
                               )),
                         ],

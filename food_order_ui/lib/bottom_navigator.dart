@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:food_order_ui/pages/cart_page/cart_view.dart';
 import 'package:food_order_ui/pages/favorite_page/favorite_page_view.dart';
 import 'package:food_order_ui/pages/home_page/home_page_view.dart';
+import 'package:food_order_ui/pages/profile_page/profile_page_view.dart';
 import 'package:food_order_ui/pages/search_page/search_page_view.dart';
 import 'config/colors.dart';
 import 'config/size_config.dart';
@@ -23,7 +24,7 @@ class _MyHomePageState extends State<MyHomePage> {
     SearchPageView(),
     CartView(),
     FavoritePageView(),
-    /*ProfilePageView(),*/
+    ProfilePageView(),
   ];
   @override
   Widget build(BuildContext context) {
@@ -47,12 +48,13 @@ class _MyHomePageState extends State<MyHomePage> {
             data: Theme.of(context).copyWith(
                 iconTheme: IconThemeData(color: Colors.white)
             ),
-            child: CurvedNavigationBar(
+           child: CurvedNavigationBar(
               key: navigationKey,
               color: Colors.black45,
               backgroundColor: Colors.transparent,
               buttonBackgroundColor: buttonColor,
               height: SizeConfig.screenHeight!/11.39,               /// 60.0
+             /// 60.0
               animationCurve: Curves.easeInOut,
               animationDuration: Duration(milliseconds: 400),
               index: index,
