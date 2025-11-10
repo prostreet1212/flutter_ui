@@ -1,5 +1,5 @@
-# food_order_ui
-# https://github.com/iremaysel/food_order_ui/blob/master/task.png
+# responsive_fashion_ui
+
 A new Flutter project.
 
 ## Getting Started

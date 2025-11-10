@@ -5,8 +5,8 @@ import 'package:food_order_ui/pages/favorite_page/favorite_page_view.dart';
 import 'package:food_order_ui/pages/home_page/home_page_view.dart';
 import 'package:food_order_ui/pages/profile_page/profile_page_view.dart';
 import 'package:food_order_ui/pages/search_page/search_page_view.dart';
-import 'config/colors.dart';
-import 'config/size_config.dart';
+import '../config/colors.dart';
+import '../config/size_config.dart';
 
 
 

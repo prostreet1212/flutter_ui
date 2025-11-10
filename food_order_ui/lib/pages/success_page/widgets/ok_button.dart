@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../../../bottom_navigator.dart';
+import '../../bottom_navigator.dart';
 import '../../../config/colors.dart';
 import '../../../config/size_config.dart';
 
