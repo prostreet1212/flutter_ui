@@ -15,8 +15,8 @@ class _HomePageState extends State<HomePage> {
   final List<String> categories = [
     'Все',
     'Популярное',
-    "Тренды"
-        'Женская',
+    "Тренды",
+    'Женская',
     'Мужская',
     'Детская',
     'Аксесуары',
@@ -27,27 +27,27 @@ class _HomePageState extends State<HomePage> {
   final List<Product> _products = [
     Product(
       'Red Dress',
+      '49.50\$',
+      'https://static.vecteezy.com/system/resources/thumbnails/045/761/404/small/a-gown-dress-isolated-on-transparent-background-png.png',
+      4.5,
+      Colors.pink.shade100,
+    ),
+    Product(
+      'Blue Shirt',
       '49.49\$',
       'assets/images/red_dress.png',
       4.5,
       Colors.pink.shade100,
     ),
     Product(
-      'Red Dress',
+      'Green Jacket',
       '49.49\$',
       'assets/images/red_dress.png',
       4.5,
       Colors.pink.shade100,
     ),
     Product(
-      'Red Dress',
-      '49.49\$',
-      'assets/images/red_dress.png',
-      4.5,
-      Colors.pink.shade100,
-    ),
-    Product(
-      'Red Dress',
+      'Yellow Skirt',
       '49.49\$',
       'assets/images/red_dress.png',
       4.5,
@@ -87,9 +87,7 @@ class _HomePageState extends State<HomePage> {
               ),
               SliverToBoxAdapter(child: SizedBox(height: 30)),
               SliverToBoxAdapter(child: _buildCatgories(isMobile)),
-              SliverToBoxAdapter(
-                child: _buildProductGrid(isMobile, isTablet, isDesktop),
-              ),
+              _buildProductGrid(isMobile, isTablet, isDesktop),
             ],
           );
         },
@@ -215,7 +213,7 @@ class _HomePageState extends State<HomePage> {
       margin: EdgeInsets.symmetric(horizontal: isMobile ? 16 : 28),
       decoration: BoxDecoration(
         gradient: LinearGradient(
-          colors: [Colors.pink[300]!, Colors.purple[300]!],
+          colors: [Colors.pink[500]!, Colors.purple[500]!],
           begin: Alignment.topLeft,
           end: Alignment.bottomRight,
         ),
@@ -331,21 +329,103 @@ class _HomePageState extends State<HomePage> {
           crossAxisCount: crossAxisCount,
           crossAxisSpacing: 16,
           mainAxisSpacing: 16,
-          childAspectRatio: isMobile?0.7:(isTablet?0.75:0.8),
+          childAspectRatio: isMobile ? 0.7 : (isTablet ? 0.75 : 0.8),
         ),
-        delegate: SliverChildBuilderDelegate((context,index){
-          return _buildProductCard(_products[index],isMobile);
-        },
-        childCount: _products.length),
+        delegate: SliverChildBuilderDelegate((context, index) {
+          return _buildProductCard(_products[index], isMobile);
+        }, childCount: _products.length),
       ),
     );
   }
- Widget _buildProductCard(Product product,bool isMobile){
+
+  Widget _buildProductCard(Product product, bool isMobile) {
     return Card(
       elevation: 4,
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
-      child: Column(),
-    );
- }
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Expanded(
+            child: Stack(
+              children: [
+                Container(
+                  decoration: BoxDecoration(
+                    color: product.bgColor,
+                    borderRadius: BorderRadius.vertical(
+                      top: Radius.circular(16),
+                    ),
+                  ),
+                  child: Center(
+                    child: Image.network(product.image,
+                      fit:BoxFit.contain,
+                    height: isMobile?120:150,
+                    errorBuilder: (context,error,stackTrace){
+                      return    Center(
+                        child: Icon(
+                        Icons.checkroom,
+                        size: isMobile ? 60 : 80,
+                        color: Colors.white,
+                        ),
+                      );
+                    },
+                    ),
 
+                  ),
+                ),
+                Positioned(
+                  right: 8,
+                  top: 8,
+                  child: Container(
+                    padding: EdgeInsets.all(6),
+                    decoration: BoxDecoration(
+                      color: Colors.white70,
+                      shape: BoxShape.circle,
+                    ),
+                    child: Icon(
+                      Icons.favorite_border,
+                      color: Colors.pink,
+                      size: isMobile ? 20 : 24,
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ),
+          Padding(
+              padding: EdgeInsets.all(12),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(product.name,
+                  style: TextStyle(
+                    fontSize: isMobile?16:18,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+                SizedBox(height: 4,),
+                Text(product.price,
+                  style: TextStyle(
+                    fontSize: isMobile?14:16,
+                    color: Colors.pink,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+                SizedBox(height: 4,),
+                Row(
+                  children: [
+                    Icon(Icons.star,color: Colors.amber,size:isMobile?16:20,),
+                    SizedBox(width: 4,),
+                    Text(product.rating.toString(),style: TextStyle(
+                      fontSize: isMobile?14:16,
+                      fontWeight: FontWeight.bold,
+                    ),)
+                  ],
+                )
+              ],
+            ),
+          ),
+        ],
+      ),
+    );
+  }
 }
