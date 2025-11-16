@@ -35,37 +35,44 @@ class _HomePageState extends State<HomePage> {
     Product(
       'Blue Shirt',
       '49.49\$',
-      'assets/images/red_dress.png',
+      'https://static.vecteezy.com/system/resources/thumbnails/067/856/459/small_2x/a-blue-shirt-with-long-sleeves-free-png.png',
       4.5,
-      Colors.pink.shade100,
+      Colors.blue.shade100,
     ),
     Product(
       'Green Jacket',
       '49.49\$',
-      'assets/images/red_dress.png',
+      'https://i.pinimg.com/originals/76/90/fe/7690fe8f0b87da74d3703825e049fd95.png',
       4.5,
-      Colors.pink.shade100,
+      Colors.green.shade100,
     ),
     Product(
       'Yellow Skirt',
       '49.49\$',
-      'assets/images/red_dress.png',
+      'https://rosepng.com/wp-content/uploads/2024/10/s11728_yellow_skirt_isolated_on_white_background_-stylize_20_ba5049a5-7cdc-4989-bc05-759256d2c29e_1-photoroom.png',
+      4.5,
+      Colors.yellow.shade100,
+    ),
+    Product(
+      'Black Shoes',
+      '49.49\$',
+      'https://static.vecteezy.com/system/resources/previews/051/667/161/non_2x/pair-of-black-leather-shoes-png.png',
+      4.5,
+      Colors.grey.shade100,
+    ),
+    Product(
+      'White  Hat',
+      '49.49\$',
+      'https://png.pngtree.com/png-clipart/20190920/original/pngtree-beautiful-white-cartoon-hat-png-image_4665787.jpg',
       4.5,
       Colors.pink.shade100,
     ),
     Product(
-      'Red Dress',
+      'Purple Scarf',
       '49.49\$',
-      'assets/images/red_dress.png',
+      'https://png.pngtree.com/png-clipart/20250428/original/pngtree-purple-scarf-png-image_20868089.png',
       4.5,
-      Colors.pink.shade100,
-    ),
-    Product(
-      'Red Dress',
-      '49.49\$',
-      'assets/images/red_dress.png',
-      4.5,
-      Colors.pink.shade100,
+      Colors.purple.shade100,
     ),
   ];
 
@@ -88,6 +95,8 @@ class _HomePageState extends State<HomePage> {
               SliverToBoxAdapter(child: SizedBox(height: 30)),
               SliverToBoxAdapter(child: _buildCatgories(isMobile)),
               _buildProductGrid(isMobile, isTablet, isDesktop),
+              SliverToBoxAdapter(child: _buildPromotionSection(isMobile,isTablet)),
+              SliverToBoxAdapter(child: SizedBox(height: 40,),),
             ],
           );
         },
@@ -428,4 +437,19 @@ class _HomePageState extends State<HomePage> {
       ),
     );
   }
+
+ Widget _buildPromotionSection(bool isMobile,bool isTablet){
+    return Container(
+      margin: EdgeInsets.symmetric(horizontal: 10),
+      padding:EdgeInsets.all(isMobile?30:50),
+      decoration: BoxDecoration(
+        gradient: LinearGradient(
+            colors: [Colors.pink.shade400,Colors.purple.shade400,],
+            begin: Alignment.topLeft,
+        end: Alignment.bottomRight),
+      ),
+      //child: ,
+    );
+  }
+
 }
