@@ -26,49 +26,49 @@ class _HomePageState extends State<HomePage> {
 
   final List<Product> _products = [
     Product(
-      'Red Dress',
+      'Красное платье',
       '49.50\$',
       'https://static.vecteezy.com/system/resources/thumbnails/045/761/404/small/a-gown-dress-isolated-on-transparent-background-png.png',
       4.5,
       Colors.pink.shade100,
     ),
     Product(
-      'Blue Shirt',
+      'Голубая рубашка',
       '49.49\$',
       'https://static.vecteezy.com/system/resources/thumbnails/067/856/459/small_2x/a-blue-shirt-with-long-sleeves-free-png.png',
       4.5,
       Colors.blue.shade100,
     ),
     Product(
-      'Green Jacket',
+      'Зеленый свитшот',
       '49.49\$',
       'https://i.pinimg.com/originals/76/90/fe/7690fe8f0b87da74d3703825e049fd95.png',
       4.5,
       Colors.green.shade100,
     ),
     Product(
-      'Yellow Skirt',
+      'Оранжевая юбка',
       '49.49\$',
       'https://rosepng.com/wp-content/uploads/2024/10/s11728_yellow_skirt_isolated_on_white_background_-stylize_20_ba5049a5-7cdc-4989-bc05-759256d2c29e_1-photoroom.png',
       4.5,
       Colors.yellow.shade100,
     ),
     Product(
-      'Black Shoes',
+      'Черные ботинки',
       '49.49\$',
       'https://static.vecteezy.com/system/resources/previews/051/667/161/non_2x/pair-of-black-leather-shoes-png.png',
       4.5,
       Colors.grey.shade100,
     ),
     Product(
-      'White  Hat',
+      'Белая шляпа',
       '49.49\$',
       'https://png.pngtree.com/png-clipart/20190920/original/pngtree-beautiful-white-cartoon-hat-png-image_4665787.jpg',
       4.5,
       Colors.pink.shade100,
     ),
     Product(
-      'Purple Scarf',
+      'Фиолетовый шарф',
       '49.49\$',
       'https://png.pngtree.com/png-clipart/20250428/original/pngtree-purple-scarf-png-image_20868089.png',
       4.5,
@@ -94,9 +94,13 @@ class _HomePageState extends State<HomePage> {
               ),
               SliverToBoxAdapter(child: SizedBox(height: 30)),
               SliverToBoxAdapter(child: _buildCatgories(isMobile)),
+              SliverToBoxAdapter(child: SizedBox(height: 20)),
               _buildProductGrid(isMobile, isTablet, isDesktop),
-              SliverToBoxAdapter(child: _buildPromotionSection(isMobile,isTablet)),
-              SliverToBoxAdapter(child: SizedBox(height: 40,),),
+              SliverToBoxAdapter(child: SizedBox(height: 30)),
+              SliverToBoxAdapter(
+                child: _buildPromotionSection(isMobile, isTablet),
+              ),
+              SliverToBoxAdapter(child: SizedBox(height: 40)),
             ],
           );
         },
@@ -132,7 +136,7 @@ class _HomePageState extends State<HomePage> {
                   ),
                   SizedBox(width: 8),
                   Text(
-                    'FASHION',
+                    'МОДА',
                     style: TextStyle(
                       color: Colors.black,
                       fontSize: isMobile ? 20 : 24,
@@ -148,7 +152,7 @@ class _HomePageState extends State<HomePage> {
                     TextButton(
                       onPressed: () {},
                       child: Text(
-                        'Home',
+                        'ДОМОЙ',
                         style: TextStyle(
                           color: Colors.pink,
                           fontWeight: FontWeight.bold,
@@ -158,7 +162,7 @@ class _HomePageState extends State<HomePage> {
                     TextButton(
                       onPressed: () {},
                       child: Text(
-                        'Shop',
+                        'МАГАЗИН',
                         style: TextStyle(
                           color: Colors.pink,
                           fontWeight: FontWeight.bold,
@@ -168,7 +172,7 @@ class _HomePageState extends State<HomePage> {
                     TextButton(
                       onPressed: () {},
                       child: Text(
-                        'About',
+                        'О НАС',
                         style: TextStyle(
                           color: Colors.pink,
                           fontWeight: FontWeight.bold,
@@ -237,7 +241,7 @@ class _HomePageState extends State<HomePage> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  'Summer',
+                  'Лето',
                   style: TextStyle(
                     color: Colors.white,
                     fontSize: isMobile ? 32 : (isTablet ? 48 : 64),
@@ -245,7 +249,7 @@ class _HomePageState extends State<HomePage> {
                   ),
                 ),
                 Text(
-                  'Collection 2025',
+                  'Коллекция 2025',
                   style: TextStyle(
                     color: Colors.white,
                     fontSize: isMobile ? 24 : (isTablet ? 36 : 48),
@@ -267,7 +271,7 @@ class _HomePageState extends State<HomePage> {
                     ),
                   ),
                   child: Text(
-                    'Shop Now',
+                    'Купить сейчас',
                     style: TextStyle(
                       fontSize: isMobile ? 16 : 20,
                       fontWeight: FontWeight.bold,
@@ -365,20 +369,20 @@ class _HomePageState extends State<HomePage> {
                     ),
                   ),
                   child: Center(
-                    child: Image.network(product.image,
-                      fit:BoxFit.contain,
-                    height: isMobile?120:150,
-                    errorBuilder: (context,error,stackTrace){
-                      return    Center(
-                        child: Icon(
-                        Icons.checkroom,
-                        size: isMobile ? 60 : 80,
-                        color: Colors.white,
-                        ),
-                      );
-                    },
+                    child: Image.network(
+                      product.image,
+                      fit: BoxFit.contain,
+                      height: isMobile ? 120 : 150,
+                      errorBuilder: (context, error, stackTrace) {
+                        return Center(
+                          child: Icon(
+                            Icons.checkroom,
+                            size: isMobile ? 60 : 80,
+                            color: Colors.white,
+                          ),
+                        );
+                      },
                     ),
-
                   ),
                 ),
                 Positioned(
@@ -401,35 +405,44 @@ class _HomePageState extends State<HomePage> {
             ),
           ),
           Padding(
-              padding: EdgeInsets.all(12),
+            padding: EdgeInsets.all(12),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text(product.name,
+                Text(
+                  product.name,
                   style: TextStyle(
-                    fontSize: isMobile?16:18,
+                    fontSize: isMobile ? 16 : 18,
                     fontWeight: FontWeight.bold,
                   ),
                 ),
-                SizedBox(height: 4,),
-                Text(product.price,
+                SizedBox(height: 4),
+                Text(
+                  product.price,
                   style: TextStyle(
-                    fontSize: isMobile?14:16,
+                    fontSize: isMobile ? 14 : 16,
                     color: Colors.pink,
                     fontWeight: FontWeight.bold,
                   ),
                 ),
-                SizedBox(height: 4,),
+                SizedBox(height: 4),
                 Row(
                   children: [
-                    Icon(Icons.star,color: Colors.amber,size:isMobile?16:20,),
-                    SizedBox(width: 4,),
-                    Text(product.rating.toString(),style: TextStyle(
-                      fontSize: isMobile?14:16,
-                      fontWeight: FontWeight.bold,
-                    ),)
+                    Icon(
+                      Icons.star,
+                      color: Colors.amber,
+                      size: isMobile ? 16 : 20,
+                    ),
+                    SizedBox(width: 4),
+                    Text(
+                      product.rating.toString(),
+                      style: TextStyle(
+                        fontSize: isMobile ? 14 : 16,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
                   ],
-                )
+                ),
               ],
             ),
           ),
@@ -438,18 +451,55 @@ class _HomePageState extends State<HomePage> {
     );
   }
 
- Widget _buildPromotionSection(bool isMobile,bool isTablet){
+  Widget _buildPromotionSection(bool isMobile, bool isTablet) {
     return Container(
-      margin: EdgeInsets.symmetric(horizontal: 10),
-      padding:EdgeInsets.all(isMobile?30:50),
+      margin: EdgeInsets.symmetric(horizontal: isMobile ? 16 : 40),
+      padding: EdgeInsets.all(isMobile ? 30 : 50),
       decoration: BoxDecoration(
         gradient: LinearGradient(
-            colors: [Colors.pink.shade400,Colors.purple.shade400,],
-            begin: Alignment.topLeft,
-        end: Alignment.bottomRight),
+          colors: [Colors.orange.shade400, Colors.pink.shade400],
+          begin: Alignment.topLeft,
+          end: Alignment.bottomRight,
+        ),
+        borderRadius: BorderRadius.circular(30),
+      ),
+      child: Column(
+        children: [
+          Text(
+            'Получи скидку 40%',
+            style: TextStyle(color: Colors.white, fontSize: isMobile ? 28 : 36),
+          ),
+          SizedBox(height: 10),
+          Text(
+            'Вы здесь впервые, введите код ШМОТКА для получения скидки',
+            textAlign: TextAlign.center,
+            style: TextStyle(color: Colors.white, fontSize: isMobile ? 16 : 20),
+          ),
+          SizedBox(height: 20),
+          ElevatedButton(
+            onPressed: () {},
+            style: ElevatedButton.styleFrom(
+              backgroundColor: Colors.white,
+              foregroundColor: Colors.pink,
+              padding: EdgeInsets.symmetric(
+                horizontal: isMobile?20:30,
+                vertical: isMobile?10:15,
+              ),
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(30),
+              )
+            ),
+            child: Text(
+              'Купить сейчас',
+              style: TextStyle(
+                fontSize: isMobile ? 16 : 20,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+          ),
+        ],
       ),
       //child: ,
     );
   }
-
 }
